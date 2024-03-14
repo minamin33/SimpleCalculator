@@ -37,7 +37,7 @@ class CalculatorWindow:
     self.first_number = int(self.e.get())
     self.operator = "addition"
     self.e.delete(0,tk.END)
-
+    
   def button_equal(self):
     second_number = int(self.e.get())
     self.e.delete(0,tk.END)
