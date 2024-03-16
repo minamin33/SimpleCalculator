@@ -1,11 +1,17 @@
 import tkinter as tk
+from tkinter import font
 
 root = tk.Tk()
 #Tab name 
 root.title("Simple Calculator")
 #Entry box and w/l of Calulator
-e = tk.Entry(root, width = 33, borderwidth = 5)
+e = tk.Entry(root, width = 35, borderwidth = 5)
 e.grid(row= 0, column = 0, columnspan = 3, padx =5 , pady = 10)
+
+root.configure(bg = "gray75")
+
+custom_font = font.Font(family="Arial", size=13, weight = "normal")
+root.option_add("*Font", custom_font)
 #Buttons methods
 def button_click(number):
   current = e.get()
@@ -59,28 +65,27 @@ def button_divide():
   math = "division"
   fst_num = int(first_number)
   e.delete(0,tk.END)
-
-
+  
 #Define Buttons
-button_1 = tk.Button(root, text = "1", padx = 40, pady= 20,command = lambda: button_click(1))
-button_2 = tk.Button(root, text = "2", padx = 40, pady= 20,command=  lambda: button_click(2))
-button_3 = tk.Button(root, text = "3", padx = 40, pady= 20,command=  lambda: button_click(3))
-button_4 = tk.Button(root, text = "4", padx = 40, pady= 20,command=  lambda: button_click(4))
-button_5 = tk.Button(root, text = "5", padx = 40, pady= 20,command=  lambda: button_click(5))
-button_6 = tk.Button(root, text = "6", padx = 40, pady= 20,command=  lambda: button_click(6))
-button_7 = tk.Button(root, text = "7", padx = 40, pady= 20,command=  lambda: button_click(7))
-button_8 = tk.Button(root, text = "8", padx = 40, pady= 20,command=  lambda: button_click(8))
-button_9 = tk.Button(root, text = "9", padx = 40, pady= 20,command=  lambda: button_click(9))
-button_0 = tk.Button(root, text = "0", padx = 40, pady= 20,command=  lambda: button_click(0))
-button_equal = tk.Button(root, text = "=", padx = 39, pady= 20,command = button_equal, bg = orange , fg = white)
-button_add= tk.Button(root, text = "+", padx = 38, pady= 20,command= button_add, )
-button_subtract= tk.Button(root, text = "-", padx = 40, pady= 20,command= button_subtract)
-button_multiply= tk.Button(root, text = "x", padx = 39, pady= 20,command= button_multiply)
-button_divide= tk.Button(root, text = "/", padx = 40, pady= 20,command= button_divide)
-button_clear = tk.Button(root, text = "Clear", padx = 29, pady= 20,command= button_clear)
+button_1 = tk.Button(root, text = "1", padx = 40, pady= 20,command = lambda: button_click(1), bg = "gray65",fg = "white")
+button_2 = tk.Button(root, text = "2", padx = 40, pady= 20,command=  lambda: button_click(2),bg = "gray65",fg = "white")
+button_3 = tk.Button(root, text = "3", padx = 40, pady= 20,command=  lambda: button_click(3),bg = "gray65",fg = "white")
+button_4 = tk.Button(root, text = "4", padx = 40, pady= 20,command=  lambda: button_click(4),bg = "gray65",fg = "white")
+button_5 = tk.Button(root, text = "5", padx = 40, pady= 20,command=  lambda: button_click(5),bg = "gray65",fg = "white")
+button_6 = tk.Button(root, text = "6", padx = 40, pady= 20,command=  lambda: button_click(6),bg = "gray65",fg = "white")
+button_7 = tk.Button(root, text = "7", padx = 40, pady= 20,command=  lambda: button_click(7),bg = "gray65",fg = "white")
+button_8 = tk.Button(root, text = "8", padx = 40, pady= 20,command=  lambda: button_click(8),bg = "gray65",fg = "white")
+button_9 = tk.Button(root, text = "9", padx = 40, pady= 20,command=  lambda: button_click(9),bg = "gray65",fg = "white")
+button_0 = tk.Button(root, text = "0", padx = 40, pady= 20,command=  lambda: button_click(0),bg = "gray65",fg = "white")
+button_equal = tk.Button(root, text = "=", padx = 39, pady= 20,command = button_equal, bg = "orange" ,fg = "white")
+button_add= tk.Button(root, text = "+", padx = 35, pady= 20,command= button_add,bg = "orange" ,fg = "white" )
+button_subtract= tk.Button(root, text = "-", padx = 39, pady= 20,command= button_subtract,bg = "orange" ,fg = "white")
+button_multiply= tk.Button(root, text = "x", padx = 39, pady= 20,command= button_multiply,bg = "orange" ,fg = "white")
+button_divide= tk.Button(root, text = "/", padx = 40, pady= 20,command= button_divide,bg = "orange" ,fg = "white")
+button_clear = tk.Button(root, text = "Clear", padx = 22, pady= 20,command= button_clear,bg = "orange" ,fg = "white")
 
 
-#Buttons Figu
+#Buttons Figuration
 button_1.grid(row= 3, column = 0)
 button_2.grid(row= 3, column = 1)
 button_3.grid(row= 3, column = 2)
